@@ -1,0 +1,381 @@
+{% load compress %} {% load static %}
+
+<!DOCTYPE html>
+<html class="scroll-smooth hover:scroll-auto" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+		<!-- TailwindCSS output.css is linked for stylesheet -->
+		{% compress css %}
+		<link rel="stylesheet" href="{% static 'src/output.css' %}" />
+		{% endcompress %}
+	</head>
+	<body class="h-screen">
+		<nav
+			class="bg-purple-300 border-purple-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+			<div
+				class="container max-w-6xl flex flex-wrap items-center justify-between mx-auto">
+				<a href="#" class="flex items-center">
+					<span
+						class="self-center text-purple-700 text-xl font-semibold whitespace-nowrap dark:text-white"
+						>CollegeBay</span
+					>
+				</a>
+				<div class="flex md:order-2">
+					<a
+						href="{% url 'sign-up' %}"
+						class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+						Get started
+					</a>
+					<a
+						href="{% url 'log-in' %}"
+						class="text-white mx-2 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+						Log In
+					</a>
+
+					<button
+						data-collapse-toggle="navbar-cta"
+						type="button"
+						class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						aria-controls="navbar-cta"
+						aria-expanded="false">
+						<span class="sr-only">Open main menu</span>
+						<svg
+							class="w-6 h-6"
+							aria-hidden="true"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+								clip-rule="evenodd"></path>
+						</svg>
+					</button>
+				</div>
+				<div
+					class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+					id="navbar-cta">
+					<ul
+						class="flex flex-col p-4 mt-4 border border-purple-100 rounded-lg bg-purple-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-purple-300 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+						<li>
+							<a
+								href="#"
+								class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 dark:text-white"
+								aria-current="page"
+								>Home</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+								>Request</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header id="header" class="text-center py-10 h-[85vh]">
+			<h1
+				class="my-4 text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-5xl lg:text-6xl dark:text-white">
+				CollegeBay
+			</h1>
+			<p
+				class="mb-6 text-md font-normal text-purple-500 lg:text-lg sm:px-16 xl:px-48 dark:text-gray-400">
+				The platform allows college students to buy and sell various items such
+				as textbooks, notes, electronic devices, and other supplies that are in
+				good condition and can be reused. We provide an easy-to-use platform
+				where students can create listings, search for items, and communicate
+				with buyers and sellers. This will let students acquire the things they
+				need for college while reducing waste and contributing to a sustainable
+				future.
+			</p>
+		</header>
+
+		<section id="what-we-do" class="bg-purple-300">
+			<h1 class="text-center text-3xl pt-7 font-semibold text-purple-900">
+				What we do?
+			</h1>
+			<div
+				class="py-6 flex md:flex-row md:justify-center flex-col items-center">
+				<div
+					class="max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img
+							class="rounded-t-lg"
+							src="https://media.steelseriescdn.com/thumbs/blog/posts/6-ways-to-make-your-pc-setup-look-awesome/5a5af93b19cd4be5ba8ce4cc27467856.jpg.1200x630_q100_crop-scale_optimize_upscale.jpg"
+							alt="" />
+					</a>
+					<div class="p-5 text-center">
+						<a href="#">
+							<h5
+								class="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
+								Noteworthy technology acquisitions 2021
+							</h5>
+						</a>
+						<p class="mb-3 font-normal text-purple-700 dark:text-gray-400">
+							Here are the biggest enterprise technology acquisitions of 2021 so
+							far, in reverse chronological order.
+						</p>
+					</div>
+				</div>
+				<div
+					class="max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img
+							class="rounded-t-lg"
+							src="https://media.steelseriescdn.com/thumbs/blog/posts/6-ways-to-make-your-pc-setup-look-awesome/5a5af93b19cd4be5ba8ce4cc27467856.jpg.1200x630_q100_crop-scale_optimize_upscale.jpg"
+							alt="" />
+					</a>
+					<div class="p-5 text-center">
+						<a href="#">
+							<h5
+								class="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
+								Noteworthy technology acquisitions 2021
+							</h5>
+						</a>
+						<p class="mb-3 font-normal text-purple-700 dark:text-gray-400">
+							Here are the biggest enterprise technology acquisitions of 2021 so
+							far, in reverse chronological order.
+						</p>
+					</div>
+				</div>
+				<div
+					class="max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+					<a href="#">
+						<img
+							class="rounded-t-lg"
+							src="https://media.steelseriescdn.com/thumbs/blog/posts/6-ways-to-make-your-pc-setup-look-awesome/5a5af93b19cd4be5ba8ce4cc27467856.jpg.1200x630_q100_crop-scale_optimize_upscale.jpg"
+							alt="" />
+					</a>
+					<div class="p-5 text-center">
+						<a href="#">
+							<h5
+								class="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
+								Noteworthy technology acquisitions 2021
+							</h5>
+						</a>
+						<p class="mb-3 font-normal text-purple-700 dark:text-gray-400">
+							Here are the biggest enterprise technology acquisitions of 2021 so
+							far, in reverse chronological order.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="carousel">
+			<h1 class="text-center text-3xl pt-7 font-semibold text-purple-900">
+				Hear what are users want to say...
+			</h1>
+			<div
+				id="default-carousel"
+				class="relative max-w-4xl mx-auto py-10"
+				data-carousel="slide">
+				<!-- Carousel wrapper -->
+				<div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+					<!-- Item 1 -->
+					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+						<img
+							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
+							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+							alt="..." />
+						<div
+							class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+							<h5 class="text-xl text-purple-900">First slide label</h5>
+							<p class="text-purple-700">
+								Some representative placeholder content for the first slide.
+							</p>
+						</div>
+					</div>
+					<!-- Item 2 -->
+					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+						<img
+							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
+							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+							alt="..." />
+						<div
+							class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+							<h5 class="text-xl text-purple-900">Second slide label</h5>
+							<p class="text-purple-700">
+								Some representative placeholder content for the first slide.
+							</p>
+						</div>
+					</div>
+					<!-- Item 3 -->
+					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+						<img
+							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
+							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+							alt="..." />
+						<div
+							class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+							<h5 class="text-xl text-purple-900">Third slide label</h5>
+							<p class="text-purple-700">
+								Some representative placeholder content for the first slide.
+							</p>
+						</div>
+					</div>
+					<!-- Item 4 -->
+					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+						<img
+							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
+							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+							alt="..." />
+						<div
+							class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+							<h5 class="text-xl text-purple-900">Fourth slide label</h5>
+							<p class="text-purple-700">
+								Some representative placeholder content for the first slide.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slider controls -->
+				<button
+					type="button"
+					class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+					data-carousel-prev>
+					<span
+						class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+						<svg
+							aria-hidden="true"
+							class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15 19l-7-7 7-7"></path>
+						</svg>
+						<span class="sr-only">Previous</span>
+					</span>
+				</button>
+				<button
+					type="button"
+					class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+					data-carousel-next>
+					<span
+						class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+						<svg
+							aria-hidden="true"
+							class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 5l7 7-7 7"></path>
+						</svg>
+						<span class="sr-only">Next</span>
+					</span>
+				</button>
+			</div>
+		</section>
+
+		<section id="get-started" class="text-center py-10 h-[30vh]">
+			<h1
+				class="my-4 text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-3xl lg:text-4xl dark:text-white">
+				So what are you waiting for, let's get started
+			</h1>
+			<a
+				href="{% url 'sign-up' %}"
+				class="mx-2 mt-4 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-xl px-5 py-4 text-center">
+				Count me in
+				<svg
+					aria-hidden="true"
+					class="inline w-5 h-5 ml-2 -mr-1"
+					fill="currentColor"
+					viewBox="0 0 20 20"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						fill-rule="evenodd"
+						d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</a>
+		</section>
+
+		<div
+			class="bg-purple-300 w-full pt-10 text-center sm:pt-8 dark:bg-gray-800 dark:border-gray-700">
+			<h5 class="mb-2 text-3xl font-bold text-purple-900 dark:text-white">
+				Work fast from anywhere
+			</h5>
+			<p class="mb-5 text-base text-purple-500 sm:text-lg dark:text-gray-400">
+				Stay up to date and move work forward with CollegeBay on iOS & Android.
+				Download the app today.
+			</p>
+			<div
+				class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+				<a
+					href="#"
+					class="w-full sm:w-auto bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-purple-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+					<svg
+						class="mr-3 w-7 h-7"
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fab"
+						data-icon="apple"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 384 512">
+						<path
+							fill="currentColor"
+							d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path>
+					</svg>
+					<div class="text-left">
+						<div class="mb-1 text-xs">Coming soon on</div>
+						<div class="-mt-1 font-sans text-sm font-semibold">
+							Mac App Store
+						</div>
+					</div>
+				</a>
+				<a
+					href="#"
+					class="w-full sm:w-auto bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-purple-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+					<svg
+						class="mr-3 w-7 h-7"
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fab"
+						data-icon="google-play"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512">
+						<path
+							fill="currentColor"
+							d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"></path>
+					</svg>
+					<div class="text-left">
+						<div class="mb-1 text-xs">Coming soon on</div>
+						<div class="-mt-1 font-sans text-sm font-semibold">Google Play</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<footer class="p-4 bg-purple-300 shadow md:px-6 md:py-8 dark:bg-gray-900">
+			<hr
+				class="my-6 border-purple-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+			<span
+				class="block text-sm text-purple-500 sm:text-center dark:text-gray-400"
+				>© <a href="#" class="hover:underline">CollegeBay™</a>. All Rights
+				Reserved.
+			</span>
+		</footer>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+	</body>
+</html>
