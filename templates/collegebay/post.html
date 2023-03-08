@@ -1,0 +1,130 @@
+{% load compress %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Post</title>
+		<!-- TailwindCSS output.css is linked for stylesheet -->
+		{% compress css %}
+		<link rel="stylesheet" href="{% static 'src/output.css' %}" />
+		{% endcompress %}
+	</head>
+	<body>
+		<h1
+			class="my-4 text-center text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-3xl lg:text-4xl dark:text-white">
+			Post about the product
+		</h1>
+		<div
+			class="bg-purple-300 max-w-4xl mx-auto p-10 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl">
+			<form>
+				<div
+					class="container flex flex-wrap justify-around sm:flex-col items-center md:flex-row">
+					<label
+						class="block text-center my-auto text-sm text-purple-900 dark:text-white"
+						for="user_avatar"
+						>Upload product image</label
+					>
+					<form method="post" enctype="multipart/form-data">
+						<input
+							type="file"
+							class="block max-w-sm text-sm text-purple-900 border border-purple-300 rounded-lg cursor-pointer bg-purple-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+							aria-describedby="user_avatar_help"
+							id="user_avatar"
+							name="img" />
+						<div
+							class="inline max-w-fit sm:my-2 lg:my-0 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							<input type="submit" name="submit" value="Upload" />
+						</div>
+					</form>
+				</div>
+				<hr
+					class="mt-4 bg-transparent border-0 border-b-2 border-purple-700 appearance-none h-1 max-w-5xl mx-auto" />
+				<div class="my-4">
+					<div class="relative z-0 w-full mb-6 group">
+						<input
+							type="text"
+							name="floating_title"
+							id="floating_title"
+							class="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-700 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+							placeholder=" "
+							required />
+						<label
+							for="floating_title"
+							class="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+							>Title</label
+						>
+					</div>
+					<div class="relative z-0 w-full mb-6 group">
+						<input
+							type="text"
+							name="price"
+							id="floating_price"
+							class="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-700 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+							placeholder=" "
+							required />
+						<label
+							for="floating_price"
+							class="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+							>Price</label
+						>
+					</div>
+					<div class="grid md:grid-cols-2 md:gap-6">
+						<div class="relative z-0 w-full mb-6 group">
+							<input
+								type="text"
+								name="floating_owner"
+								id="floating_owner"
+								class="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-700 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+								placeholder=" "
+								required />
+							<label
+								for="floating_owner"
+								class="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+								>Owner(1st/2nd)</label
+							>
+						</div>
+						<div class="relative z-0 w-full mb-6 group">
+							<input
+								type="text"
+								name="floating_location"
+								id="floating_location"
+								class="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-700 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+								placeholder=" "
+								required />
+							<label
+								for="floating_location"
+								class="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+								>Location</label
+							>
+						</div>
+					</div>
+					<div class="">
+						<label
+							for="description"
+							class="block mb-2 text-sm text-purple-500 dark:text-white"
+							>Product Description</label
+						>
+						<textarea
+							id="description"
+							rows="4"
+							class="block p-2.5 w-full text-sm text-purple-900 bg-purple-50 rounded-lg border border-purple-300 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							placeholder="Enter about your product..."></textarea>
+					</div>
+
+					<div class="text-center my-5">
+						<a
+							href="#"
+							class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							Create Post
+						</a>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+	</body>
+</html>

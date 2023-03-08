@@ -62,7 +62,7 @@
 						class="flex flex-col p-4 mt-4 border border-purple-100 rounded-lg bg-purple-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-purple-300 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 						<li>
 							<a
-								href="#"
+								href="{% url 'home' %}"
 								class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 dark:text-white"
 								aria-current="page"
 								>Home</a
@@ -70,7 +70,7 @@
 						</li>
 						<li>
 							<a
-								href="#"
+								href="{% url 'request' %}"
 								class="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 								>Request</a
 							>
@@ -366,7 +366,7 @@
 			</div>
 		</div>
 
-		<footer class="p-4 bg-purple-300 shadow md:px-6 md:py-8 dark:bg-gray-900">
+		<footer class="text-center p-4 bg-purple-300 shadow md:px-6 md:py-8 dark:bg-gray-900">
 			<hr
 				class="my-6 border-purple-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 			<span

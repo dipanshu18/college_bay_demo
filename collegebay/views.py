@@ -4,8 +4,8 @@ def home(request):
     return render(request, 'collegebay/index.html')
 
 
-def get_started(request):
-    return render(request, 'collegebay/get_started.html')
+def sign_up(request):
+    return render(request, 'collegebay/sign_up.html')
 
 def login(request):
     return render(request, 'collegebay/login.html')

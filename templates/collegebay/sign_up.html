@@ -21,7 +21,8 @@
 			class="my-4 text-center text-3xl font-extrabold leading-none tracking-tight text-purple-900 md:text-xl lg:text-2xl dark:text-white">
 			Create an account
 		</h2>
-		<div class="max-w-xl mx-auto p-10 border border-purple-200 rounded-lg shadow-purple-700 shadow-2xl">
+		<div
+			class="max-w-xl mx-auto p-10 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl">
 			<form>
 				<div class="relative z-0 w-full mb-6 group">
 					<input
@@ -137,7 +138,14 @@
 		</div>
 
 		<div class="text-center py-10 text-purple-900">
-			<p>Already have an account? <a href="{% url 'log-in' %}" class="underline hover:text-purple-700">Log In</a></p>
+			<p>
+				Already have an account?
+				<a href="{% url 'log-in' %}" class="underline hover:text-purple-700"
+					>Log In</a
+				>
+			</p>
 		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 	</body>
 </html>
