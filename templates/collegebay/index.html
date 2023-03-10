@@ -11,13 +11,18 @@
 		{% compress css %}
 		<link rel="stylesheet" href="{% static 'src/output.css' %}" />
 		{% endcompress %}
+
+		<!-- FontAwesome CDN -->
+		<script
+			src="https://kit.fontawesome.com/7ad256d8a7.js"
+			crossorigin="anonymous"></script>
 	</head>
 	<body class="h-screen">
 		<nav
 			class="bg-purple-300 border-purple-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
 			<div
 				class="container max-w-6xl flex flex-wrap items-center justify-between mx-auto">
-				<a href="#" class="flex items-center">
+				<a href="{% url 'home' %}" class="flex items-center">
 					<span
 						class="self-center text-purple-700 text-xl font-semibold whitespace-nowrap dark:text-white"
 						>CollegeBay</span
@@ -70,7 +75,7 @@
 						</li>
 						<li>
 							<a
-								href="{% url 'request' %}"
+								href="{% url 'log-in' %}"
 								class="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 								>Request</a
 							>
@@ -80,7 +85,7 @@
 			</div>
 		</nav>
 
-		<header id="header" class="text-center py-10 h-[85vh]">
+		<header id="header" class="text-center py-10 h-[55vh]">
 			<h1
 				class="my-4 text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-5xl lg:text-6xl dark:text-white">
 				CollegeBay
@@ -95,92 +100,98 @@
 				need for college while reducing waste and contributing to a sustainable
 				future.
 			</p>
+			<!-- <img
+				class="max-w-6xl mx-auto rounded-lg shadow-purple-400 shadow-2xl"
+				src="{% static 'images/CollegeBay.jpg' %}"
+				alt="Items images" /> -->
+			<span
+				class="inline-block animate-bounce rounded-full p-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 text-center text-white text-sm">
+				<svg
+					class="w-6 h-6 mx-auto"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor">
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+				</svg>
+			</span>
 		</header>
 
-		<section id="what-we-do" class="bg-purple-300">
-			<h1 class="text-center text-3xl pt-7 font-semibold text-purple-900">
+		<section id="what-we-do" class="h-2/3 bg-purple-300">
+			<h1 class="text-center text-4xl pt-7 font-semibold text-purple-900">
 				What we do?
 			</h1>
 			<div
 				class="py-6 flex md:flex-row md:justify-center flex-col items-center">
 				<div
-					class="max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img
-							class="rounded-t-lg"
-							src="https://media.steelseriescdn.com/thumbs/blog/posts/6-ways-to-make-your-pc-setup-look-awesome/5a5af93b19cd4be5ba8ce4cc27467856.jpg.1200x630_q100_crop-scale_optimize_upscale.jpg"
-							alt="" />
-					</a>
-					<div class="p-5 text-center">
+					class="h-[40vh] max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+					<div class="p-10 text-center">
 						<a href="#">
 							<h5
 								class="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
-								Noteworthy technology acquisitions 2021
+								Zero Charges
 							</h5>
 						</a>
-						<p class="mb-3 font-normal text-purple-700 dark:text-gray-400">
-							Here are the biggest enterprise technology acquisitions of 2021 so
-							far, in reverse chronological order.
+						<p class="mb-3 p-2 font-normal text-purple-700 dark:text-gray-400">
+							CollegeBay is a dedicated space where users can find items that
+							are available at no cost. CollegeBay encourages users to sell
+							their used items and helps other students who may be in need or
+							want them at a negotiable cost.
 						</p>
 					</div>
 				</div>
 				<div
-					class="max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img
-							class="rounded-t-lg"
-							src="https://media.steelseriescdn.com/thumbs/blog/posts/6-ways-to-make-your-pc-setup-look-awesome/5a5af93b19cd4be5ba8ce4cc27467856.jpg.1200x630_q100_crop-scale_optimize_upscale.jpg"
-							alt="" />
-					</a>
-					<div class="p-5 text-center">
+					class="h-[40vh] max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+					<div class="p-10 text-center">
 						<a href="#">
 							<h5
 								class="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
-								Noteworthy technology acquisitions 2021
+								Easy Access
 							</h5>
 						</a>
-						<p class="mb-3 font-normal text-purple-700 dark:text-gray-400">
-							Here are the biggest enterprise technology acquisitions of 2021 so
-							far, in reverse chronological order.
+						<p class="mb-3 p-2 font-normal text-purple-700 dark:text-gray-400">
+							CollegeBay is designed to provide users with easy access to the
+							items they need for college. Users can search for items by
+							keywords, making it easy to find what they are looking for.
 						</p>
 					</div>
 				</div>
 				<div
-					class="max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-					<a href="#">
-						<img
-							class="rounded-t-lg"
-							src="https://media.steelseriescdn.com/thumbs/blog/posts/6-ways-to-make-your-pc-setup-look-awesome/5a5af93b19cd4be5ba8ce4cc27467856.jpg.1200x630_q100_crop-scale_optimize_upscale.jpg"
-							alt="" />
-					</a>
-					<div class="p-5 text-center">
+					class="h-[40vh] max-w-sm md:mx-4 my-6 bg-white border border-purple-200 rounded-lg shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+					<div class="p-10 text-center">
 						<a href="#">
 							<h5
 								class="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
-								Noteworthy technology acquisitions 2021
+								Chat Interaction
 							</h5>
 						</a>
-						<p class="mb-3 font-normal text-purple-700 dark:text-gray-400">
-							Here are the biggest enterprise technology acquisitions of 2021 so
-							far, in reverse chronological order.
+						<p class="mb-3 p-2 font-normal text-purple-700 dark:text-gray-400">
+							CollegeBay includes a chat function that allows users to
+							communicate with each other in real-time. This feature enables
+							buyers and sellers to discuss details about items, negotiate
+							prices, and arrange for pick-up or delivery.
 						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="carousel">
+		<!-- <section id="carousel">
 			<h1 class="text-center text-3xl pt-7 font-semibold text-purple-900">
 				Hear what are users want to say...
 			</h1>
 			<div
 				id="default-carousel"
 				class="relative max-w-4xl mx-auto py-10"
-				data-carousel="slide">
-				<!-- Carousel wrapper -->
-				<div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-					<!-- Item 1 -->
-					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+				data-carousel="slide"> -->
+		<!-- Carousel wrapper -->
+		<!-- <div class="relative h-56 overflow-hidden rounded-lg md:h-96"> -->
+		<!-- Item 1 -->
+		<!-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
 						<img
 							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
 							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -192,9 +203,9 @@
 								Some representative placeholder content for the first slide.
 							</p>
 						</div>
-					</div>
-					<!-- Item 2 -->
-					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+					</div> -->
+		<!-- Item 2 -->
+		<!-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
 						<img
 							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
 							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -206,9 +217,9 @@
 								Some representative placeholder content for the first slide.
 							</p>
 						</div>
-					</div>
-					<!-- Item 3 -->
-					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+					</div> -->
+		<!-- Item 3 -->
+		<!-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
 						<img
 							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
 							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -220,9 +231,9 @@
 								Some representative placeholder content for the first slide.
 							</p>
 						</div>
-					</div>
-					<!-- Item 4 -->
-					<div class="hidden duration-700 ease-in-out" data-carousel-item>
+					</div> -->
+		<!-- Item 4 -->
+		<!-- <div class="hidden duration-700 ease-in-out" data-carousel-item>
 						<img
 							src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/07/petting_pet_cat-1296x728-header.jpg?w=1155&h=1528"
 							class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
@@ -234,11 +245,11 @@
 								Some representative placeholder content for the first slide.
 							</p>
 						</div>
-					</div>
-				</div>
+					</div> -->
+		<!-- </div> -->
 
-				<!-- Slider controls -->
-				<button
+		<!-- Slider controls -->
+		<!-- <button
 					type="button"
 					class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
 					data-carousel-prev>
@@ -259,8 +270,8 @@
 						</svg>
 						<span class="sr-only">Previous</span>
 					</span>
-				</button>
-				<button
+				</button> -->
+		<!-- <button
 					type="button"
 					class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
 					data-carousel-next>
@@ -281,31 +292,33 @@
 						</svg>
 						<span class="sr-only">Next</span>
 					</span>
-				</button>
-			</div>
-		</section>
+				</button> -->
+		<!-- </div>
+		</section> -->
 
-		<section id="get-started" class="text-center py-10 h-[30vh]">
+		<section id="get-started" class="text-center py-10 h-[35vh]">
 			<h1
-				class="my-4 text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-3xl lg:text-4xl dark:text-white">
+				class="mt-4 text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-3xl lg:text-4xl dark:text-white">
 				So what are you waiting for, let's get started
 			</h1>
-			<a
-				href="{% url 'sign-up' %}"
-				class="mx-2 mt-4 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-xl px-5 py-4 text-center">
-				Count me in
-				<svg
-					aria-hidden="true"
-					class="inline w-5 h-5 ml-2 -mr-1"
-					fill="currentColor"
-					viewBox="0 0 20 20"
-					xmlns="http://www.w3.org/2000/svg">
-					<path
-						fill-rule="evenodd"
-						d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-						clip-rule="evenodd"></path>
-				</svg>
-			</a>
+			<div class="my-10">
+				<a
+					href="{% url 'sign-up' %}"
+					class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-bold rounded-lg text-xl px-5 py-4 text-center">
+					Count me in
+					<svg
+						aria-hidden="true"
+						class="inline w-5 h-5 ml-2 -mr-1"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</a>
+			</div>
 		</section>
 
 		<div
@@ -366,7 +379,8 @@
 			</div>
 		</div>
 
-		<footer class="text-center p-4 bg-purple-300 shadow md:px-6 md:py-8 dark:bg-gray-900">
+		<footer
+			class="text-center p-4 bg-purple-300 shadow md:px-6 md:py-8 dark:bg-gray-900">
 			<hr
 				class="my-6 border-purple-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 			<span
