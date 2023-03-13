@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
+    'collegebay_user_auth',
+    'collegebay_user_profiles',
     'collegebay_marketplace',
 ]
 

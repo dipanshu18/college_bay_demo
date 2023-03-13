@@ -1219,10 +1219,6 @@ input:checked + .toggle-bg {
   margin-top: 1.5rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .block {
   display: block;
 }
@@ -1291,12 +1287,16 @@ input:checked + .toggle-bg {
   height: 2rem;
 }
 
-.h-\[30vh\] {
-  height: 30vh;
+.h-\[35vh\] {
+  height: 35vh;
 }
 
-.h-\[85vh\] {
-  height: 85vh;
+.h-\[40vh\] {
+  height: 40vh;
+}
+
+.h-\[55vh\] {
+  height: 55vh;
 }
 
 .h-full {
@@ -1305,26 +1305,6 @@ input:checked + .toggle-bg {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[55vh\] {
-  height: 55vh;
-}
-
-.h-1\/3 {
-  height: 33.333333%;
-}
-
-.h-1\/2 {
-  height: 50%;
-}
-
-.h-\[40vh\] {
-  height: 40vh;
-}
-
-.h-\[35vh\] {
-  height: 35vh;
 }
 
 .w-1\/2 {
@@ -1742,21 +1722,6 @@ input:checked + .toggle-bg {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-teal-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 189 202 / var(--tw-bg-opacity));
-}
-
-.bg-purple-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(172 148 250 / var(--tw-bg-opacity));
-}
-
-.bg-purple-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(74 29 150 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1781,27 +1746,12 @@ input:checked + .toggle-bg {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-red-200 {
-  --tw-gradient-from: #FBD5D5;
-  --tw-gradient-to: rgb(251 213 213 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.via-red-300 {
-  --tw-gradient-to: rgb(248 180 180 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), #F8B4B4, var(--tw-gradient-to);
-}
-
 .to-blue-500 {
   --tw-gradient-to: #3F83F8;
 }
 
 .to-pink-500 {
   --tw-gradient-to: #E74694;
-}
-
-.to-yellow-200 {
-  --tw-gradient-to: #FCE96A;
 }
 
 .p-1 {
@@ -1830,10 +1780,6 @@ input:checked + .toggle-bg {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .px-0 {
@@ -2276,11 +2222,6 @@ input:checked + .toggle-bg {
   --tw-ring-color: rgb(144 97 249 / var(--tw-ring-opacity));
 }
 
-.focus\:ring-red-100:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(253 232 232 / var(--tw-ring-opacity));
-}
-
 .group:hover .group-hover\:bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
@@ -2505,11 +2446,6 @@ input:checked + .toggle-bg {
 .dark .dark\:focus\:ring-gray-700:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(55 65 81 / var(--tw-ring-opacity));
-}
-
-.dark .dark\:focus\:ring-red-400:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(249 128 128 / var(--tw-ring-opacity));
 }
 
 .dark .dark\:focus\:ring-purple-800:focus {

@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('get-started/', views.sign_up, name="sign-up"),
-    path('log-in/', views.login, name="log-in"),
+    path('', include('collegebay_user_auth.urls'), name="collegebay-user-auth"),
+    path('', include('collegebay_user_profiles.urls'), name="collegebay-user-profiles"),
     path('', include('collegebay_marketplace.urls'), name="collegebay-marketplace")
 ]
