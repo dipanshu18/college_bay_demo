@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/Navbar";
 import ItemRequestCard from "../components/Request/ItemRequestCard";
-import Footer from "../components/Footer";
 import useRequestProductsContext from "../hooks/useRequestProductsContext";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function RequestedItem() {
 	const { requestProducts, dispatch } = useRequestProductsContext();

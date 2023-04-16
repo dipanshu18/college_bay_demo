@@ -9,7 +9,6 @@ function ProfileSettings() {
 		phoneNo: "+" + 919876545678,
 		college: "Vidyalankar",
 		requests: 3,
-		boughtItems: 4,
 		postedItems: 2,
 	};
 	return (
@@ -65,12 +64,6 @@ function ProfileSettings() {
 									Requests:
 								</span>
 								<a href="/user-requests">{user.requests}</a>
-							</p>
-							<p className="mb-1 text-md font-medium text-purple-900 dark:text-white">
-								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
-									Bought History:
-								</span>
-								<a href="/user-history">{user.boughtItems}</a>
 							</p>
 						</div>
 					</div>

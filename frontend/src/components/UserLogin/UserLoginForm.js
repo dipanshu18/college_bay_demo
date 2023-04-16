@@ -2,7 +2,7 @@ import React from "react";
 
 function UserLoginForm() {
 	return (
-		<div className="bg-purple-300 h-screen">
+		<div className="bg-purple-300">
 			<h1 class="my-10 text-center text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-3xl lg:text-4xl dark:text-white">
 				Hey, welcome back!
 			</h1>
@@ -33,15 +33,6 @@ function UserLoginForm() {
 							class="bg-purple-50 border border-purple-300 text-purple-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							required
 						/>
-					</div>
-					<div class="flex justify-between items-start mb-6">
-						<div class="text-center">
-							<a
-								href="#0"
-								class="hover:underline text-sm font-semibold text-purple-900 hover:text-purple-700">
-								Forgot Password?
-							</a>
-						</div>
 					</div>
 					<div class="text-center">
 						<a

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import ProductCard from "../components/MarketPlace/ProductCard";
 import useProductsContext from "../hooks/useProductsContext";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function MarketPlace() {
 	const { products, dispatch } = useProductsContext();
@@ -20,12 +22,14 @@ function MarketPlace() {
 
 	return (
 		<div id="marketplace">
+			<Navbar />
 			<div className="my-10 flex flex-col items-center md:flex-row md:justify-center md:mx-auto mx-2 flex-wrap">
 				{products &&
 					products.map((product) => (
 						<ProductCard key={product._id} product={product} />
 					))}
 			</div>
+			<Footer />
 		</div>
 	);
 }
