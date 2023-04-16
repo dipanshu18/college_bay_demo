@@ -14,7 +14,9 @@ export const requestProductsReducer = (state, action) => {
 			};
 		case "DELETE_PRODUCT":
 			return {
-				requestProducts: state.products.filter((p) => p._id !== action.payload._id),
+				requestProducts: state.requestProducts.filter(
+					(p) => p._id !== action.payload._id
+				),
 			};
 		default:
 			return state;
