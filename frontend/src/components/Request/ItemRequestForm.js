@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ItemRequestForm() {
+	const [title, setTitle] = useState("");
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		const request = { title };
+
+		const response = await fetch("/api/items/requests", {
+			method: "POST",
+			body: JSON.stringify(request),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+		const json = await response.json();
+		if (response.ok) {
+			setTitle("");
+			console.log("new request added:", json);
+		}
+	};
+
 	return (
 		<div id="item-request">
 			<h1 className="my-4 text-center text-4xl font-extrabold leading-none tracking-tight text-purple-900 md:text-3xl lg:text-4xl">
 				Request for the product
 			</h1>
 			<div className="bg-purple-300 max-w-4xl mx-auto p-10 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl my-12">
-				<form>
+				<form onSubmit={handleSubmit}>
 					<div className="container flex justify-around flex-col items-center lg:flex-row">
 						<label
 							className="block text-center my-2 lg:my-auto text-sm text-purple-900"
@@ -37,6 +58,8 @@ function ItemRequestForm() {
 								type="text"
 								name="floating_title"
 								id="floating_title"
+								onChange={(e) => setTitle(e.target.value)}
+								value={title}
 								className="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-700 appearance-none  focus:outline-none focus:ring-0 focus:border-purple-600 peer"
 								placeholder=" "
 								required
@@ -47,23 +70,10 @@ function ItemRequestForm() {
 								Title
 							</label>
 						</div>
-						<div className="">
-							<label for="description" className="block mb-2 text-sm text-purple-500 ">
-								Product Description
-							</label>
-							<textarea
-								id="description"
-								rows="4"
-								className="block p-2.5 w-full text-sm text-purple-900 bg-purple-50 rounded-lg border border-purple-300 focus:ring-purple-500 focus:border-purple-500 "
-								placeholder="Enter about your product..."></textarea>
-						</div>
-
-						<div className="text-center my-5">
-							<a
-								href="#0"
-								className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+						<div className="text-center mt-12">
+							<button className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
 								Create Request
-							</a>
+							</button>
 						</div>
 					</div>
 				</form>

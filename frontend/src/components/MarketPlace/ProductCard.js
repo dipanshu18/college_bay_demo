@@ -1,139 +1,45 @@
 import React from "react";
 
-function ProductCard() {
+function ProductCard({ product }) {
 	return (
-		<div className="my-10 flex flex-col items-center md:flex-row md:justify-center md:mx-auto mx-2 flex-wrap">
-			<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-				<img
-					className="p-8 rounded-t-lg"
-					src="https://flowbite.com/docs/images/products/apple-watch.png"
-					alt="product image"
-				/>
-				<div className="px-5 pb-5">
-					<a href="/product-info">
-						<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
-							Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-						</h5>
-					</a>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-bold text-purple-900 dark:text-white">
-							$599
-						</span>
-					</div>
+		<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+			<img className="p-8 rounded-t-lg" src="" alt={product.title} />
+			<div className="px-5 pb-5">
+				<a href="/product-info">
+					<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
+						{product.title}
+					</h5>
+				</a>
+				<div className="flex items-center justify-between">
+					<span className="text-xl font-bold text-purple-900 dark:text-white">
+						₹{product.price}
+					</span>
 				</div>
-			</div>
-			<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-				<img
-					className="p-8 rounded-t-lg"
-					src="https://flowbite.com/docs/images/products/apple-watch.png"
-					alt="product image"
-				/>
-				<div className="px-5 pb-5">
-					<a href="/product-info">
-						<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
-							Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-						</h5>
-					</a>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-bold text-purple-900 dark:text-white">
-							$599
-						</span>
-					</div>
+				<div className="flex items-center justify-between">
+					<span className="text-xl font-semibold text-purple-900 dark:text-white">
+						Location: {product.location}
+					</span>
 				</div>
-			</div>
-			<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-				<img
-					className="p-8 rounded-t-lg"
-					src="https://flowbite.com/docs/images/products/apple-watch.png"
-					alt="product image"
-				/>
-				<div className="px-5 pb-5">
-					<a href="/product-info">
-						<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
-							Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-						</h5>
+				<h5 class="mb-1 text-xl font-medium text-purple-900 dark:text-white">
+					Owner: Bonnie Green
+				</h5>
+				<div class="flex mt-4 space-x-3 md:mt-2">
+					<a
+						href=" https://wa.me/+917990582647"
+						class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-xl px-5 py-4 text-center">
+						Contact Seller
+						<svg
+							aria-hidden="true"
+							class="inline w-5 h-5 ml-2 -mr-1"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+								clip-rule="evenodd"></path>
+						</svg>
 					</a>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-bold text-purple-900 dark:text-white">
-							$599
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-				<img
-					className="p-8 rounded-t-lg"
-					src="https://flowbite.com/docs/images/products/apple-watch.png"
-					alt="product image"
-				/>
-				<div className="px-5 pb-5">
-					<a href="/product-info">
-						<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
-							Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-						</h5>
-					</a>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-bold text-purple-900 dark:text-white">
-							$599
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-				<img
-					className="p-8 rounded-t-lg"
-					src="https://flowbite.com/docs/images/products/apple-watch.png"
-					alt="product image"
-				/>
-				<div className="px-5 pb-5">
-					<a href="/product-info">
-						<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
-							Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-						</h5>
-					</a>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-bold text-purple-900 dark:text-white">
-							$599
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-				<img
-					className="p-8 rounded-t-lg"
-					src="https://flowbite.com/docs/images/products/apple-watch.png"
-					alt="product image"
-				/>
-				<div className="px-5 pb-5">
-					<a href="/product-info">
-						<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
-							Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-						</h5>
-					</a>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-bold text-purple-900 dark:text-white">
-							$599
-						</span>
-					</div>
-				</div>
-			</div>
-			<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-				<img
-					className="p-8 rounded-t-lg"
-					src="https://flowbite.com/docs/images/products/apple-watch.png"
-					alt="product image"
-				/>
-				<div className="px-5 pb-5">
-					<a href="/product-info">
-						<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
-							Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
-						</h5>
-					</a>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-bold text-purple-900 dark:text-white">
-							$599
-						</span>
-					</div>
 				</div>
 			</div>
 		</div>

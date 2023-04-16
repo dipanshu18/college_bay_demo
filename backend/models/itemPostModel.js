@@ -12,15 +12,7 @@ const itemPostSchema = new Schema(
 			type: Number,
 			required: true,
 		},
-		owner: {
-			type: Number,
-			required: true,
-		},
 		location: {
-			type: String,
-			required: true,
-		},
-		productDescription: {
 			type: String,
 			required: true,
 		},
