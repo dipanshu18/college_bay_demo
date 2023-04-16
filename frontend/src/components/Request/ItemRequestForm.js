@@ -51,7 +51,6 @@ function ItemRequestForm() {
 							</div>
 						</form>
 					</div>
-					<hr className="mt-4 bg-transparent border-0 border-b-2 border-purple-700 appearance-none h-1 max-w-5xl mx-auto" />
 					<div className="my-4">
 						<div className="relative z-0 w-full mb-6 group">
 							<input

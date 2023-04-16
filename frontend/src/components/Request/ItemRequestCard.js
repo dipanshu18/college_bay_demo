@@ -1,4 +1,5 @@
 import React from "react";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ItemRequestCard({ product }) {
 	return (
@@ -7,7 +8,7 @@ function ItemRequestCard({ product }) {
 				<img class="rounded-t-lg" src="" alt={product.title} />
 
 				<div class="p-5">
-					<h5 class="mb-2 text-center text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
 						{product.title}
 					</h5>
 					<div class="flex justify-center items-center mt-4 space-x-3 md:mt-2">
@@ -27,6 +28,11 @@ function ItemRequestCard({ product }) {
 									clip-rule="evenodd"></path>
 							</svg>
 						</a>
+					</div>
+					<div className="flex mt-4 items-center justify-between">
+						<span className="text-sm font-semibold text-purple-900 dark:text-white">
+							{formatDistanceToNow(new Date(product.createdAt), { addSuffix: true })}{" "}
+						</span>
 					</div>
 				</div>
 			</div>

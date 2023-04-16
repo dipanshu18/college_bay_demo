@@ -1,4 +1,6 @@
 import React from "react";
+// date fns
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProductCard({ product }) {
 	return (
@@ -6,7 +8,7 @@ function ProductCard({ product }) {
 			<img className="p-8 rounded-t-lg" src="" alt={product.title} />
 			<div className="px-5 pb-5">
 				<a href="/product-info">
-					<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
+					<h5 className="text-xl font-semibold tracking-tight text-purple-900 dark:text-white">
 						{product.title}
 					</h5>
 				</a>
@@ -16,14 +18,14 @@ function ProductCard({ product }) {
 					</span>
 				</div>
 				<div className="flex items-center justify-between">
-					<span className="text-xl font-semibold text-purple-900 dark:text-white">
+					<span className="text-sm font-semibold text-purple-900 dark:text-white">
 						Location: {product.location}
 					</span>
 				</div>
-				<h5 class="mb-1 text-xl font-medium text-purple-900 dark:text-white">
+				<h5 class="mb-1 text-sm font-medium text-purple-900 dark:text-white">
 					Owner: Bonnie Green
 				</h5>
-				<div class="flex mt-4 space-x-3 md:mt-2">
+				<div class="flex mt-4 md:mt-2">
 					<a
 						href=" https://wa.me/+917990582647"
 						class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-xl px-5 py-4 text-center">
@@ -40,6 +42,11 @@ function ProductCard({ product }) {
 								clip-rule="evenodd"></path>
 						</svg>
 					</a>
+				</div>
+				<div className="flex mt-4 items-center justify-between">
+					<span className="text-sm font-semibold text-purple-900 dark:text-white">
+						{formatDistanceToNow(new Date(product.createdAt), { addSuffix: true })}{" "}
+					</span>
 				</div>
 			</div>
 		</div>
