@@ -13,26 +13,30 @@ const {
 	updateRequest,
 } = require("../controllers/itemsController");
 
+const requireAuth = require("../middleware/requireAuth");
+
 const item = express.Router();
+
+item.use(requireAuth);
 
 item.get("/", getItems);
 
-item.get("/:id", getItem);
+// item.get("/:id", getItem);
 
 item.post("/", createItemPost);
 
-item.delete("/:id", deleteItem);
+// item.delete("/:id", deleteItem);
 
-item.patch("/:id", updateItem);
+// item.patch("/:id", updateItem);
 
 item.get("/requests/all", getRequests);
 
-item.get("/requests/:id", getRequest);
+// item.get("/requests/:id", getRequest);
 
 item.post("/requests", createItemRequest);
 
-item.delete("/requests/:id", deleteRequest);
+// item.delete("/requests/:id", deleteRequest);
 
-item.patch("/requests/:id", updateRequest);
+// item.patch("/requests/:id", updateRequest);
 
 module.exports = item;

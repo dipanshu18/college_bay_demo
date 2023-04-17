@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLogout } from "../hooks/useLogout";
 
 function Navbar() {
+	const { logout } = useLogout();
+
+	const handleClick = () => {
+		logout();
+	};
+
 	return (
 		<nav className="bg-purple-300 border-purple-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
 			<div className="container max-w-6xl flex flex-wrap items-center justify-around mx-auto">
@@ -12,13 +19,15 @@ function Navbar() {
 						</span>
 					</div>
 				</Link>
-
-				<div className="flex md:order-2">
+				<div className="flex items-center md:order-2">
 					<Link to="/profile">
-						<span className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+						<div className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 							Profile
-						</span>
+						</div>
 					</Link>
+					<div className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-2 ">
+						<button onClick={handleClick}>Log out</button>
+					</div>
 					<button
 						data-collapse-toggle="navbar-cta"
 						type="button"

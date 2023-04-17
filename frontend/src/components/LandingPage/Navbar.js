@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
 	return (
-		<nav class="bg-purple-300 border-purple-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+		<nav class="bg-purple-300 border-purple-200 px-2 sm:px-4 py-6 dark:bg-gray-900">
 			<div class="container max-w-6xl flex flex-wrap items-center justify-around mx-auto">
 				<Link to="/">
 					<span class="flex items-center">

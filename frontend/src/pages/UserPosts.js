@@ -2,13 +2,22 @@ import React, { useEffect } from "react";
 import PostedItems from "../components/Profile/PostedItems";
 import Navbar from "../components/Navbar";
 import useProductsContext from "../hooks/useProductsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function UserPosts() {
+	const { user } = useAuthContext();
 	const { products, dispatch } = useProductsContext();
 
 	useEffect(() => {
 		const fetchProducts = async () => {
-			const response = await fetch("/api/items/");
+			if (!user) {
+				return;
+			}
+			const response = await fetch("/api/items/", {
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			});
 			const productsJson = await response.json();
 
 			if (response.ok) {
@@ -16,8 +25,10 @@ function UserPosts() {
 			}
 		};
 
-		fetchProducts();
-	}, [dispatch]);
+		if (user) {
+			fetchProducts();
+		}
+	}, [dispatch, user]);
 
 	return (
 		<div id="user-posts">

@@ -1,7 +1,6 @@
 import React from "react";
 import ItemPostForm from "../components/CreateItemPost/ItemPostForm";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 function CreateItemPost() {
 	return (

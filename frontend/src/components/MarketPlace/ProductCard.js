@@ -2,7 +2,7 @@ import React from "react";
 // date fns
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
-function ProductCard({ product }) {
+function ProductCard({ product, user }) {
 	return (
 		<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
 			<img className="p-8 rounded-t-lg" src="" alt={product.title} />
@@ -21,7 +21,7 @@ function ProductCard({ product }) {
 					</span>
 				</div>
 				<h5 class="mb-1 text-sm font-medium text-purple-900 dark:text-white">
-					Owner: Bonnie Green
+					Owner: {user.fullName}
 				</h5>
 				<div class="flex mt-4 md:mt-2">
 					<a

@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function ItemPostForm() {
+	const { user } = useAuthContext();
 	const [title, setTitle] = useState("");
 	const [price, setPrice] = useState("");
+	const [error, setError] = useState(null);
 	const [location, setLocation] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if (!user) {
+			setError("You must be logged in");
+			return;
+		}
 
 		const product = { title, price, location };
 
@@ -15,6 +22,7 @@ function ItemPostForm() {
 			body: JSON.stringify(product),
 			headers: {
 				"Content-Type": "application/json",
+				Authorization: `Bearer ${user.token}`,
 			},
 		});
 		const json = await response.json();
@@ -36,7 +44,7 @@ function ItemPostForm() {
 					<div className="container flex justify-around flex-col items-center lg:flex-row">
 						<label
 							className="block text-center my-2 lg:my-auto text-sm text-purple-900"
-							for="user_avatar">
+							htmlFor="user_avatar">
 							Upload product image
 						</label>
 						<form
@@ -68,7 +76,7 @@ function ItemPostForm() {
 								required
 							/>
 							<label
-								for="floating_title"
+								htmlFor="floating_title"
 								className="peer-focus:font-medium absolute text-sm text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 								Title
 							</label>
@@ -85,7 +93,7 @@ function ItemPostForm() {
 								required
 							/>
 							<label
-								for="floating_price"
+								htmlFor="floating_price"
 								className="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 								Price
 							</label>
@@ -102,7 +110,7 @@ function ItemPostForm() {
 								required
 							/>
 							<label
-								for="floating_location"
+								htmlFor="floating_location"
 								className="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
 								Location
 							</label>
@@ -112,6 +120,13 @@ function ItemPostForm() {
 							<button className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-400 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
 								Create Post
 							</button>
+						</div>
+						<div className="my-4">
+							{error && (
+								<div className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+									{error}
+								</div>
+							)}
 						</div>
 					</div>
 				</form>

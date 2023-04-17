@@ -2,13 +2,23 @@ import React, { useEffect } from "react";
 import ItemRequestCard from "../components/Request/ItemRequestCard";
 import useRequestProductsContext from "../hooks/useRequestProductsContext";
 import Navbar from "../components/Navbar";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function RequestedItem() {
 	const { requestProducts, dispatch } = useRequestProductsContext();
 
+	const { user } = useAuthContext();
+
 	useEffect(() => {
 		const fetchRequestProducts = async () => {
-			const response = await fetch("/api/items/requests/all");
+			if (!user) {
+				return;
+			}
+			const response = await fetch("/api/items/requests/all", {
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			});
 			const requestProductsJson = await response.json();
 
 			if (response.ok) {
@@ -16,8 +26,10 @@ function RequestedItem() {
 			}
 		};
 
-		fetchRequestProducts();
-	}, [dispatch]);
+		if (user) {
+			fetchRequestProducts();
+		}
+	}, [dispatch, user]);
 
 	return (
 		<div id="requested-items">
