@@ -13,6 +13,7 @@ function UserPosts() {
 			if (!user) {
 				return;
 			}
+
 			const response = await fetch("/api/items/", {
 				headers: {
 					Authorization: `Bearer ${user.token}`,
