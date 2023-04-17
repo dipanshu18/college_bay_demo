@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function UserSignupForm() {
 	return (
@@ -86,11 +87,11 @@ function UserSignupForm() {
 					</div>
 					<div class="mt-2 text-sm font-medium text-purple-400 dark:text-gray-300">
 						Already have an account?
-						<a
-							href="/login"
-							class="text-purple-700 hover:underline dark:text-blue-500">
-							Log In
-						</a>
+						<Link to="/login">
+							<span class="text-purple-700 hover:underline dark:text-blue-500">
+								Log In
+							</span>
+						</Link>
 					</div>
 				</form>
 			</div>

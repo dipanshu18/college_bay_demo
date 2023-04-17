@@ -1,20 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
 	return (
 		<nav className="bg-purple-300 border-purple-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
 			<div className="container max-w-6xl flex flex-wrap items-center justify-around mx-auto">
-				<a href="/home" className="flex items-center">
-					<span className="self-center text-purple-700 text-xl font-semibold whitespace-nowrap dark:text-white">
-						College<span className="underline">Bay</span>
-					</span>
-				</a>
+				<Link to="/home">
+					<div className="flex items-center">
+						<span className="self-center text-purple-700 text-xl font-semibold whitespace-nowrap dark:text-white">
+							College<span className="underline">Bay</span>
+						</span>
+					</div>
+				</Link>
+
 				<div className="flex md:order-2">
-					<a
-						href="/profile"
-						className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-						Profile
-					</a>
+					<Link to="/profile">
+						<span className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+							Profile
+						</span>
+					</Link>
 					<button
 						data-collapse-toggle="navbar-cta"
 						type="button"
@@ -40,33 +44,32 @@ function Navbar() {
 					id="navbar-cta">
 					<ul className="flex flex-col p-4 mt-4 border border-purple-100 rounded-lg bg-purple-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-purple-300 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 						<li>
-							<a
-								href="/home"
-								className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 dark:text-white"
-								aria-current="page">
-								Home
-							</a>
+							<Link to="/home">
+								<span className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 dark:text-white">
+									Home
+								</span>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="/request-item"
-								className="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-								Request
-							</a>
+							<Link to="/request-item">
+								<span className="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+									Request
+								</span>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="/post-item"
-								className="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-								Post
-							</a>
+							<Link to="/post-item">
+								<span className="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+									Post
+								</span>
+							</Link>
 						</li>
 						<li>
-							<a
-								href="/requested-items"
-								className="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-								Requested Items
-							</a>
+							<Link to="/requested-items">
+								<span className="block py-2 pl-3 pr-4 text-purple-500 rounded hover:bg-purple-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+									Requested Items
+								</span>
+							</Link>
 						</li>
 					</ul>
 				</div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProfileSettings() {
 	const firstName = "Dipanshu";
@@ -50,13 +51,17 @@ function ProfileSettings() {
 								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
 									Posts:
 								</span>
-								<a href="/user-posts">{user.postedItems}</a>
+								<Link to="/user-posts">
+									<span>{user.postedItems}</span>
+								</Link>
 							</p>
 							<p className="mb-1 text-md font-medium text-purple-900 dark:text-white">
 								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
 									Requests:
 								</span>
-								<a href="/user-requests">{user.requests}</a>
+								<Link to="/user-requests">
+									<span>{user.requests}</span>
+								</Link>
 							</p>
 						</div>
 					</div>
