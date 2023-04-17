@@ -1,13 +1,23 @@
 import React from "react";
 import useProductsContext from "../../hooks/useProductsContext";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function PostedItems({ product }) {
+	const { user } = useAuthContext();
 	const { dispatch } = useProductsContext();
 
 	const handleClick = async () => {
+		if (!user) {
+			return;
+		}
 		const response = await fetch("/api/items/" + product._id, {
 			method: "DELETE",
+			headers: {
+				Authorization: `Bearer ${user.token}`,
+			},
 		});
+
 		const json = await response.json();
 
 		if (response.ok) {
@@ -40,6 +50,11 @@ function PostedItems({ product }) {
 						<i class="fa-solid fa-trash-can"></i>
 					</span>
 				</button>
+			</div>
+			<div className="flex mx-6 my-4 items-center justify-between">
+				<span className="text-sm font-semibold text-purple-900 dark:text-white">
+					{formatDistanceToNow(new Date(product.createdAt), { addSuffix: true })}{" "}
+				</span>
 			</div>
 		</div>
 	);

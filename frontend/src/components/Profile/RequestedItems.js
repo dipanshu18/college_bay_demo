@@ -1,13 +1,22 @@
 import React from "react";
 import useRequestProductsContext from "../../hooks/useRequestProductsContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function RequestedItems({ product }) {
+	const { user } = useAuthContext();
+
 	const { dispatch } = useRequestProductsContext();
 
 	const handleClick = async () => {
+		if (!user) {
+			return;
+		}
 		const response = await fetch("/api/items/requests/" + product._id, {
 			method: "DELETE",
+			headers: {
+				Authorization: `Bearer ${user.token}`,
+			},
 		});
 		const json = await response.json();
 
