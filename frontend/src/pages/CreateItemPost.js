@@ -8,7 +8,6 @@ function CreateItemPost() {
 		<div id="item-post-form">
 			<Navbar />
 			<ItemPostForm />
-			<Footer />
 		</div>
 	);
 }

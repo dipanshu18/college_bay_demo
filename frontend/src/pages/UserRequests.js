@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import useRequestProductsContext from "../hooks/useRequestProductsContext";
 
+let requestCount = 0;
+
 function UserRequests() {
 	const { requestProducts, dispatch } = useRequestProductsContext();
 
@@ -20,6 +22,8 @@ function UserRequests() {
 		fetchProducts();
 	}, [dispatch]);
 
+	// requestCount = requestProducts.map((product) => (requestCount += 1));
+
 	return (
 		<div id="user-requests">
 			<Navbar />
@@ -29,9 +33,9 @@ function UserRequests() {
 						<RequestedItems key={product._id} product={product} />
 					))}
 			</div>
-			<Footer />
 		</div>
 	);
 }
 
+export { requestCount };
 export default UserRequests;

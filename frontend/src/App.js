@@ -2,7 +2,6 @@ import Home from "./pages/Home";
 import UserSignup from "./pages/UserSignup";
 import UserLogin from "./pages/UserLogin";
 import MarketPlace from "./pages/MarketPlace";
-import ProductInfo from "./pages/ProductInfo";
 import CreateItemPost from "./pages/CreateItemPost";
 import RequestItem from "./pages/RequestItem";
 import RequestedItem from "./pages/RequestedItem";
@@ -24,7 +23,6 @@ function App() {
 					<Route path="/home" element={<MarketPlace />} />
 					<Route path="/explore" element={<MarketPlace />} />
 					<Route path="/profile" element={<Profile />} />
-					<Route path="/product-info" element={<ProductInfo />} />
 					<Route path="/post-item" element={<CreateItemPost />} />
 					<Route path="/request-item" element={<RequestItem />} />
 					<Route path="/requested-items" element={<RequestedItem />} />

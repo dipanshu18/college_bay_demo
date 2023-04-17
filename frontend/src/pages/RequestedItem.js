@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import ItemRequestCard from "../components/Request/ItemRequestCard";
 import useRequestProductsContext from "../hooks/useRequestProductsContext";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 function RequestedItem() {
 	const { requestProducts, dispatch } = useRequestProductsContext();
@@ -29,7 +28,6 @@ function RequestedItem() {
 						<ItemRequestCard key={requestProduct._id} product={requestProduct} />
 					))}
 			</div>
-			<Footer />
 		</div>
 	);
 }

@@ -1,17 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { productCount } from "../../pages/MarketPlace";
+import { requestCount } from "../../pages/UserRequests";
 
 function ProfileSettings() {
-	const firstName = "Dipanshu";
-	const lastName = "Torawane";
+	const fullName = "Dipanshu Torawane";
 	const user = {
-		fullName: `${firstName + " " + lastName}`,
+		fullName,
 		email: "dipanshu.torawane@vit.edu.in",
 		phoneNo: "+" + 919876545678,
 		college: "Vidyalankar",
-		requests: 3,
-		postedItems: 2,
+		requests: requestCount,
+		postedItems: productCount,
 	};
+
 	return (
 		<div id="profile-settings">
 			<div className="flex flex-col justify-center items-center my-10">

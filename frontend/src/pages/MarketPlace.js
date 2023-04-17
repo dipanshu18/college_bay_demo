@@ -4,6 +4,8 @@ import useProductsContext from "../hooks/useProductsContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+let productCount = 0;
+
 function MarketPlace() {
 	const { products, dispatch } = useProductsContext();
 
@@ -20,6 +22,8 @@ function MarketPlace() {
 		fetchProducts();
 	}, [dispatch]);
 
+	// productCount = products.map((product) => (productCount += 1));
+
 	return (
 		<div id="marketplace">
 			<Navbar />
@@ -34,4 +38,5 @@ function MarketPlace() {
 	);
 }
 
+export { productCount };
 export default MarketPlace;

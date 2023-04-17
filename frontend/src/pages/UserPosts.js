@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import PostedItems from "../components/Profile/PostedItems";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import useProductsContext from "../hooks/useProductsContext";
 
 function UserPosts() {
@@ -29,8 +28,6 @@ function UserPosts() {
 						<PostedItems key={product._id} product={product} />
 					))}
 			</div>
-
-			<Footer />
 		</div>
 	);
 }
