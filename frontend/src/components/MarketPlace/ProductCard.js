@@ -4,10 +4,10 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 function ProductCard({ product, user }) {
 	return (
-		<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-			<img className="p-8 rounded-t-lg" src="" alt={product.title} />
-			<div className="px-5 pb-5">
-				<h5 className="text-xl font-semibold tracking-tight text-purple-900 dark:text-white">
+		<div className="md:w-1/5 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+			{/* <img className="p-8 rounded-t-lg" src="" alt={product.title} /> */}
+			<div className="px-5 py-5">
+				<h5 className="text-3xl font-bold tracking-tight text-purple-900 dark:text-white">
 					{product.title}
 				</h5>
 				<div className="flex items-center justify-between">
@@ -20,12 +20,14 @@ function ProductCard({ product, user }) {
 						Location: {product.location}
 					</span>
 				</div>
-				<h5 class="mb-1 text-sm font-medium text-purple-900 dark:text-white">
-					Owner: {user.fullName}
-				</h5>
+				<div className="flex items-center justify-between">
+					<span className="text-sm font-semibold text-purple-900 dark:text-white">
+						Owner: {user.fullName}
+					</span>
+				</div>
 				<div class="flex mt-4 md:mt-2">
 					<a
-						href=" https://wa.me/+917990582647"
+						href={`https://wa.me/+91${user.phoneNo}`}
 						class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-xl px-5 py-4 text-center">
 						Contact Seller
 						<svg

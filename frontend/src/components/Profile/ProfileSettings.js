@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { productCount } from "../../pages/MarketPlace";
-import { requestCount } from "../../pages/UserRequests";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import useUsersContext from "../../hooks/useUsersContext";
 
 function ProfileSettings() {
-	const fullName = "Dipanshu Torawane";
-	const user = {
-		fullName,
-		email: "dipanshu.torawane@vit.edu.in",
-		phoneNo: "+" + 919876545678,
-		college: "Vidyalankar",
-		requests: requestCount,
-		postedItems: productCount,
-	};
+	const { user } = useAuthContext();
+	const { users, dispatchUser } = useUsersContext();
+
+	useEffect(() => {
+		const fetchUser = async () => {
+			if (!user) {
+				return;
+			}
+			const response = await fetch("/api/user/" + users._id, {
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			});
+			const userJson = await response.json();
+
+			if (response.ok) {
+				dispatchUser({ type: "SET_USER", payload: userJson });
+			}
+		};
+
+		if (user) {
+			fetchUser();
+		}
+	}, [dispatchUser, user]);
 
 	return (
 		<div id="profile-settings">
@@ -24,37 +39,32 @@ function ProfileSettings() {
 								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
 									Name:
 								</span>
-								{user.fullName}
+								{users.fullName}
 							</p>
 							<p className="mb-1 text-md font-medium text-purple-900 dark:text-white">
 								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
 									Email:
 								</span>
-								{user.email}
+								{users.email}
 							</p>
 							<p className="mb-1 text-md font-medium text-purple-900 dark:text-white">
 								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
 									Phone No.:
 								</span>
-								{user.phoneNo}
-								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
-									<a href="#0">
-										<i class="fa-regular fa-pen-to-square"></i>
-									</a>
-								</span>
+								{users.phoneNo}
 							</p>
 							<p className="mb-1 text-md font-medium text-purple-900 dark:text-white">
 								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
 									College:
 								</span>
-								{user.college}
+								{users.college}
 							</p>
 							<p className="mb-1 text-md font-medium text-purple-900 dark:text-white">
 								<span className="text-sm text-purple-500 dark:text-gray-400 px-4">
 									Posts:
 								</span>
 								<Link to="/user-posts">
-									<span>{user.postedItems}</span>
+									<span>{users.postedItems}</span>
 								</Link>
 							</p>
 							<p className="mb-1 text-md font-medium text-purple-900 dark:text-white">
@@ -62,7 +72,7 @@ function ProfileSettings() {
 									Requests:
 								</span>
 								<Link to="/user-requests">
-									<span>{user.requests}</span>
+									<span>{users.requests}</span>
 								</Link>
 							</p>
 						</div>

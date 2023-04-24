@@ -27,9 +27,8 @@ function PostedItems({ product }) {
 
 	return (
 		<div className="md:w-1/4 w-4/5 mb-10 mx-4 md:mx-4 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl dark:bg-gray-800 dark:border-gray-700">
-			<img className="p-8 rounded-t-lg" src="" alt={product.title} />
-			<div className="px-5 pb-5">
-				<h5 className="text-md font-semibold tracking-tight text-purple-900 dark:text-white">
+			<div className="px-5 py-5">
+				<h5 className="text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
 					{product.title}
 				</h5>
 				<div className="flex items-center justify-between">

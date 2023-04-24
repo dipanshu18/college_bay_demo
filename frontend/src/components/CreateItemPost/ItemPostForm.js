@@ -3,10 +3,15 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 
 function ItemPostForm() {
 	const { user } = useAuthContext();
+	// const [image, setImage] = useState(null);
 	const [title, setTitle] = useState("");
 	const [price, setPrice] = useState("");
 	const [error, setError] = useState(null);
 	const [location, setLocation] = useState("");
+
+	// const handleImageChange = (event) => {
+	// 	setImage(event.target.files[0]);
+	// };
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -41,7 +46,7 @@ function ItemPostForm() {
 			</h1>
 			<div className="bg-purple-300 max-w-4xl mx-auto p-10 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl my-12">
 				<form onSubmit={handleSubmit}>
-					<div className="container flex justify-around flex-col items-center lg:flex-row">
+					{/* <div className="container flex justify-around flex-col items-center lg:flex-row">
 						<label
 							className="block text-center my-2 lg:my-auto text-sm text-purple-900"
 							htmlFor="user_avatar">
@@ -57,12 +62,13 @@ function ItemPostForm() {
 								aria-describedby="user_avatar_help"
 								id="user_avatar"
 								name="img"
+								onChange={handleImageChange}
 							/>
 							<div className="inline max-w-fit mx-2 md:mx-4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
 								<input type="submit" name="submit" value="Upload" />
 							</div>
 						</form>
-					</div>
+					</div> */}
 					<div className="my-4">
 						<div className="relative z-0 w-full mb-6 group">
 							<input

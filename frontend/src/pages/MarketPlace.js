@@ -4,14 +4,33 @@ import useProductsContext from "../hooks/useProductsContext";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useAuthContext } from "../hooks/useAuthContext";
+import useUsersContext from "../hooks/useUsersContext";
 
 let productCount = 0;
 
 function MarketPlace() {
 	const { user } = useAuthContext();
+	const { users, dispatchUser } = useUsersContext();
 	const { products, dispatch } = useProductsContext();
 
 	useEffect(() => {
+		const fetchUsers = async () => {
+			if (!user) {
+				return;
+			}
+			const response = await fetch("/api/user/all", {
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			});
+			const usersJson = await response.json();
+			console.log(usersJson);
+
+			if (response.ok) {
+				dispatchUser({ type: "SET_USERS", payload: usersJson });
+			}
+		};
+
 		const fetchProducts = async () => {
 			if (!user) {
 				return;
@@ -30,21 +49,25 @@ function MarketPlace() {
 
 		if (user) {
 			fetchProducts();
+			fetchUsers();
 		}
-	}, [dispatch, user]);
+	}, [dispatch, dispatchUser, user]);
 
-	// productCount = products.map((product) => (productCount += 1));
-
+	let userCount = 0;
 	return (
 		<div id="marketplace">
 			<Navbar />
 			<div className="my-10 flex flex-col items-center md:flex-row md:justify-center md:mx-auto mx-2 flex-wrap">
 				{products &&
 					products.map((product) => (
-						<ProductCard key={product._id} product={product} user={user} />
+						<ProductCard
+							key={product._id}
+							product={product}
+							user={users[userCount]}
+						/>
 					))}
+				{console.log(users)}
 			</div>
-			<Footer />
 		</div>
 	);
 }

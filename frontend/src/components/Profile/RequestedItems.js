@@ -27,9 +27,7 @@ function RequestedItems({ product }) {
 
 	return (
 		<div>
-			<div className="max-w-md text-center my-10 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-xl dark:bg-gray-800 dark:border-gray-700">
-				<img className="rounded-t-lg" src="" alt={product.title} />
-
+			<div className="w-[350px] text-center my-10 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-xl dark:bg-gray-800 dark:border-gray-700">
 				<div className="p-5">
 					<h5 className="mb-2 text-2xl font-bold tracking-tight text-purple-900 dark:text-white">
 						{product.title}
