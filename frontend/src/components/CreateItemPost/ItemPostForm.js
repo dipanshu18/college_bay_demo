@@ -50,7 +50,7 @@ function ItemPostForm() {
 			</h1>
 			<div className="bg-purple-300 max-w-4xl mx-auto p-10 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl my-12">
 				<form onSubmit={handleSubmit}>
-					<div className="container flex justify-around flex-col items-center lg:flex-row">
+					{/* <div className="container flex justify-around flex-col items-center lg:flex-row">
 						<label
 							className="block text-center my-2 lg:my-auto text-sm text-purple-900"
 							htmlFor="user_avatar">
@@ -71,7 +71,7 @@ function ItemPostForm() {
 								<input type="submit" name="submit" value="Upload" />
 							</div>
 						</form>
-					</div>
+					</div> */}
 					<div className="my-4">
 						<div className="relative z-0 w-full mb-6 group">
 							<input

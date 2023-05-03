@@ -4,7 +4,7 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 function ItemRequestCard({ product }) {
 	return (
 		<div id="requested-item">
-			<div class="w-[350px] my-10 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-xl dark:bg-gray-800 dark:border-gray-700">
+			<div class="w-[350px] my-10 mx-3 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-xl dark:bg-gray-800 dark:border-gray-700">
 				{/* <img class="rounded-t-lg" src="" alt={product.title} /> */}
 
 				<div class="p-5">

@@ -53,7 +53,7 @@ function RequestedItem() {
 	return (
 		<div id="requested-items">
 			<Navbar />
-			<div class="max-w-5xl flex flex-wrap mx-auto items-center justify-around">
+			<div className="my-10 flex flex-col items-center md:flex-row md:justify-center md:mx-auto mx-2 flex-wrap">
 				{requestProducts &&
 					requestProducts.map((requestProduct) => (
 						<ItemRequestCard key={requestProduct._id} product={requestProduct} />

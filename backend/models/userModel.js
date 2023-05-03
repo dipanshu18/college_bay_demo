@@ -9,6 +9,7 @@ const userSchema = new Schema(
 		email: {
 			type: String,
 			required: true,
+			unique: true,
 		},
 		password: {
 			type: String,
@@ -17,6 +18,14 @@ const userSchema = new Schema(
 		fullName: {
 			type: String,
 			required: true,
+		},
+		postedItems: {
+			type: Array,
+			default: [],
+		},
+		requestedItems: {
+			type: Array,
+			default: [],
 		},
 	},
 	{ timestamps: true }

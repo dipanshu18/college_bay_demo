@@ -24,7 +24,6 @@ const loginUser = async (req, res) => {
 // signup a user
 const signupUser = async (req, res) => {
 	const { email, password, fullName } = req.body;
-	console.log(req.body);
 
 	try {
 		const user = await User.signup(email, password, fullName);
@@ -40,10 +39,10 @@ const signupUser = async (req, res) => {
 
 // GET a specific user
 const getUser = async (req, res) => {
-	const { id } = req.params;
+	const { email } = req.params;
 
 	try {
-		const user = await User.findById(id);
+		const user = await User.find(email);
 		if (!user) {
 			return res.status(404).json({ message: "User not found" });
 		}

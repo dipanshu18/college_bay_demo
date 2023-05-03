@@ -33,7 +33,6 @@ function RequestedItems({ product }) {
 						{product.title}
 					</h5>
 				</div>
-
 				<div className="text-center mb-6">
 					<button
 						onClick={handleClick}
