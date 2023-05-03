@@ -12,6 +12,14 @@ const itemPostSchema = new Schema(
 			type: Number,
 			required: true,
 		},
+		ownerName: {
+			type: String,
+			required: true,
+		},
+		phoneNo: {
+			type: Number,
+			required: true,
+		},
 		location: {
 			type: String,
 			required: true,

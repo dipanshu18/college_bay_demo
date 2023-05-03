@@ -11,13 +11,15 @@ const getItems = async (req, res) => {
 // CREATE a new item
 const createItemPost = async (req, res) => {
 	const user_id = req.user._id;
-	const { title, price, location } = req.body;
+	const { title, price, ownerName, phoneNo, location } = req.body;
 
 	// ADD Doc to DB
 	try {
 		const item = await Item.create({
 			title,
 			price,
+			ownerName,
+			phoneNo,
 			location,
 			user_id,
 		});
@@ -53,12 +55,14 @@ const getRequests = async (req, res) => {
 // CREATE a new request
 const createItemRequest = async (req, res) => {
 	const user_id = req.user._id;
-	const { title } = req.body;
+	const { title, requesterName, phoneNo } = req.body;
 
 	// ADD Doc to DB
 	try {
 		const request = await Request.create({
 			title,
+			requesterName,
+			phoneNo,
 			user_id,
 		});
 		res.status(200).json(request);

@@ -8,6 +8,14 @@ const itemRequestSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		requesterName: {
+			type: String,
+			required: true,
+		},
+		phoneNo: {
+			type: Number,
+			required: true,
+		},
 		user_id: {
 			type: String,
 			required: true,

@@ -6,6 +6,8 @@ function ItemPostForm() {
 	// const [image, setImage] = useState(null);
 	const [title, setTitle] = useState("");
 	const [price, setPrice] = useState("");
+	const [ownerName, setOwnerName] = useState("");
+	const [phoneNo, setPhoneNo] = useState("");
 	const [error, setError] = useState(null);
 	const [location, setLocation] = useState("");
 
@@ -20,7 +22,7 @@ function ItemPostForm() {
 			return;
 		}
 
-		const product = { title, price, location };
+		const product = { title, price, ownerName, phoneNo, location };
 
 		const response = await fetch("/api/items/", {
 			method: "POST",
@@ -34,6 +36,8 @@ function ItemPostForm() {
 		if (response.ok) {
 			setTitle("");
 			setPrice("");
+			setOwnerName("");
+			setPhoneNo("");
 			setLocation("");
 			console.log("new product added:", json);
 		}
@@ -46,7 +50,7 @@ function ItemPostForm() {
 			</h1>
 			<div className="bg-purple-300 max-w-4xl mx-auto p-10 border border-purple-200 rounded-lg shadow-purple-400 shadow-2xl my-12">
 				<form onSubmit={handleSubmit}>
-					{/* <div className="container flex justify-around flex-col items-center lg:flex-row">
+					<div className="container flex justify-around flex-col items-center lg:flex-row">
 						<label
 							className="block text-center my-2 lg:my-auto text-sm text-purple-900"
 							htmlFor="user_avatar">
@@ -62,13 +66,12 @@ function ItemPostForm() {
 								aria-describedby="user_avatar_help"
 								id="user_avatar"
 								name="img"
-								onChange={handleImageChange}
 							/>
 							<div className="inline max-w-fit mx-2 md:mx-4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
 								<input type="submit" name="submit" value="Upload" />
 							</div>
 						</form>
-					</div> */}
+					</div>
 					<div className="my-4">
 						<div className="relative z-0 w-full mb-6 group">
 							<input
@@ -87,6 +90,7 @@ function ItemPostForm() {
 								Title
 							</label>
 						</div>
+
 						<div className="relative z-0 w-full mb-6 group">
 							<input
 								type="text"
@@ -104,6 +108,43 @@ function ItemPostForm() {
 								Price
 							</label>
 						</div>
+
+						<div className="relative z-0 w-full mb-6 group">
+							<input
+								type="text"
+								name="floating_owner_name"
+								id="floating_owner_name"
+								onChange={(e) => setOwnerName(e.target.value)}
+								value={ownerName}
+								className="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-700 appearance-none  focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+								placeholder=" "
+								required
+							/>
+							<label
+								htmlFor="floating_owner_name"
+								className="peer-focus:font-medium absolute text-sm text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+								Owner Name
+							</label>
+						</div>
+
+						<div className="relative z-0 w-full mb-6 group">
+							<input
+								type="text"
+								name="floating_phone_no"
+								id="floating_phone_no"
+								onChange={(e) => setPhoneNo(e.target.value)}
+								value={phoneNo}
+								className="block py-2.5 px-0 w-full text-sm text-purple-900 bg-transparent border-0 border-b-2 border-purple-700 appearance-none  focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+								placeholder=" "
+								required
+							/>
+							<label
+								htmlFor="floating_phone_no"
+								className="peer-focus:font-medium absolute text-sm text-purple-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+								Phone No.
+							</label>
+						</div>
+
 						<div className="relative z-0 w-full mb-6 group">
 							<input
 								type="text"

@@ -18,27 +18,13 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		phoneNo: {
-			type: Number,
-			required: true,
-		},
-		college: {
-			type: String,
-			required: true,
-		},
 	},
 	{ timestamps: true }
 );
 
-userSchema.statics.signup = async function (
-	email,
-	password,
-	fullName,
-	phoneNo,
-	college
-) {
+userSchema.statics.signup = async function (email, password, fullName) {
 	// validation
-	if (!email || !password || !fullName || !phoneNo || !college) {
+	if (!email || !password || !fullName) {
 		throw Error("All fields must be filled");
 	}
 	if (!validator.isEmail(email)) {
@@ -61,8 +47,6 @@ userSchema.statics.signup = async function (
 		email,
 		password: hash,
 		fullName,
-		phoneNo,
-		college,
 	});
 
 	return user;
@@ -76,7 +60,7 @@ userSchema.statics.login = async function (email, password) {
 
 	const user = await this.findOne({ email });
 	if (!user) {
-		throw Error("Incorrect email");
+		throw Error("No user found with this credentials. Kindly signup");
 	}
 
 	const match = await bcrypt.compare(password, user.password);

@@ -1,7 +1,7 @@
 import React from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
-function ItemRequestCard({ product, user }) {
+function ItemRequestCard({ product }) {
 	return (
 		<div id="requested-item">
 			<div class="w-[350px] my-10 bg-purple-300 border border-purple-200 rounded-lg shadow-purple-400 shadow-xl dark:bg-gray-800 dark:border-gray-700">
@@ -13,12 +13,12 @@ function ItemRequestCard({ product, user }) {
 					</h5>
 					<div className="flex items-center justify-center">
 						<span className="text-sm font-semibold text-purple-900 dark:text-white">
-							Owner: {user.fullName}
+							Requester: {product.requesterName}
 						</span>
 					</div>
 					<div class="flex justify-center items-center mt-4 space-x-3 md:mt-2">
 						<a
-							href={`https://wa.me/+91${user.phoneNo}`}
+							href={`https://wa.me/+91${product.phoneNo}`}
 							class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-bold rounded-lg text-xl px-5 py-4 text-center">
 							Contact Requester
 							<svg

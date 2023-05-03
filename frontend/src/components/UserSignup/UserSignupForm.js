@@ -7,14 +7,12 @@ function UserSignupForm() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [fullName, setFullName] = useState("");
-	const [phoneNo, setPhoneNo] = useState("");
-	const [college, setCollege] = useState("");
 
 	const { signup, error, isLoading } = useSignup();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		await signup(email, password, fullName, phoneNo, college);
+		await signup(email, password, fullName);
 	};
 
 	return (
@@ -72,22 +70,7 @@ function UserSignupForm() {
 							required
 						/>
 					</div>
-					<div className="mb-6">
-						<label
-							htmlFor="phoneNo"
-							className="block mb-2 text-sm font-medium text-purple-900 dark:text-white">
-							Phone (Don't add +91)
-						</label>
-						<input
-							type="tel"
-							id="phoneNo"
-							onChange={(e) => setPhoneNo(e.target.value)}
-							value={phoneNo}
-							className="bg-purple-50 border border-purple-300 text-purple-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-							required
-						/>
-					</div>
-					<div className="mb-6">
+					{/* <div className="mb-6">
 						<label
 							htmlFor="college"
 							className="block mb-2 text-sm font-medium text-purple-900 dark:text-white">
@@ -101,7 +84,7 @@ function UserSignupForm() {
 							className="bg-purple-50 border border-purple-300 text-purple-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							required
 						/>
-					</div>
+					</div> */}
 					<div className="text-center mt-4">
 						<button
 							disabled={isLoading}
@@ -116,7 +99,6 @@ function UserSignupForm() {
 							</div>
 						)}
 					</div>
-
 					<div className="mt-2 text-sm font-medium text-purple-400 dark:text-gray-300">
 						Already have an account?
 						<Link to="/login">

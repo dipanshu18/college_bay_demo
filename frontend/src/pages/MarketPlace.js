@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import ProductCard from "../components/MarketPlace/ProductCard";
 import useProductsContext from "../hooks/useProductsContext";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { useAuthContext } from "../hooks/useAuthContext";
 import useUsersContext from "../hooks/useUsersContext";
 
@@ -53,20 +52,14 @@ function MarketPlace() {
 		}
 	}, [dispatch, dispatchUser, user]);
 
-	let userCount = 0;
 	return (
 		<div id="marketplace">
 			<Navbar />
 			<div className="my-10 flex flex-col items-center md:flex-row md:justify-center md:mx-auto mx-2 flex-wrap">
 				{products &&
 					products.map((product) => (
-						<ProductCard
-							key={product._id}
-							product={product}
-							user={users[userCount]}
-						/>
+						<ProductCard key={product._id} product={product} />
 					))}
-				{console.log(users)}
 			</div>
 		</div>
 	);

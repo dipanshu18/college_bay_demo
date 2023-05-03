@@ -56,11 +56,7 @@ function RequestedItem() {
 			<div class="max-w-5xl flex flex-wrap mx-auto items-center justify-around">
 				{requestProducts &&
 					requestProducts.map((requestProduct) => (
-						<ItemRequestCard
-							key={requestProduct._id}
-							product={requestProduct}
-							user={users[0]}
-						/>
+						<ItemRequestCard key={requestProduct._id} product={requestProduct} />
 					))}
 			</div>
 		</div>
