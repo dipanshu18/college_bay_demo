@@ -4,31 +4,30 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import useUsersContext from "../../hooks/useUsersContext";
 
 function ProfileSettings() {
-	// const { user } = useAuthContext();
-	// const { users, dispatchUser } = useUsersContext();
+	const { user } = useAuthContext();
+	const { dispatchUser } = useUsersContext();
 
-	// useEffect(() => {
-	// 	const fetchUser = async () => {
-	// 		if (!user) {
-	// 			return;
-	// 		}
-	// 		const response = await fetch("/api/user/" + user.email, {
-	// 			headers: {
-	// 				Authorization: `Bearer ${user.token}`,
-	// 			},
-	// 		});
-	// 		const userJson = await response.json();
-	// 		console.log(userJson);
+	useEffect(() => {
+		const fetchUser = async () => {
+			if (!user) {
+				return;
+			}
+			const response = await fetch("/api/user/" + user.email, {
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			});
+			const userJson = await response.json();
 
-	// 		if (response.ok) {
-	// 			dispatchUser({ type: "SET_USERS", payload: userJson });
-	// 		}
-	// 	};
+			if (response.ok) {
+				dispatchUser({ type: "SET_USERS", payload: userJson });
+			}
+		};
 
-	// 	if (user) {
-	// 		fetchUser();
-	// 	}
-	// }, [dispatchUser, user]);
+		if (user) {
+			fetchUser();
+		}
+	}, [dispatchUser, user]);
 
 	return (
 		<div id="profile-settings">

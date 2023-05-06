@@ -40,7 +40,6 @@ const signupUser = async (req, res) => {
 // GET a specific user
 const getUser = async (req, res) => {
 	const { email } = req.params;
-
 	try {
 		const user = await User.find(email);
 		if (!user) {

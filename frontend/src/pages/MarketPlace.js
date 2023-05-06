@@ -9,7 +9,7 @@ let productCount = 0;
 
 function MarketPlace() {
 	const { user } = useAuthContext();
-	const { users, dispatchUser } = useUsersContext();
+	const { dispatchUser } = useUsersContext();
 	const { products, dispatch } = useProductsContext();
 
 	useEffect(() => {
@@ -23,7 +23,6 @@ function MarketPlace() {
 				},
 			});
 			const usersJson = await response.json();
-			console.log(usersJson);
 
 			if (response.ok) {
 				dispatchUser({ type: "SET_USERS", payload: usersJson });

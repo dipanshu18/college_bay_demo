@@ -20,6 +20,6 @@ user.post("/signup", signupUser);
 user.get("/all", getUsers);
 
 // get a specific user route
-user.get("/:id", getUser);
+user.get("/logged-in-user", getUser);
 
 module.exports = user;
