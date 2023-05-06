@@ -8,6 +8,13 @@ const getItems = async (req, res) => {
 	res.status(200).json(items);
 };
 
+// GET all user items
+const getUserItems = async (req, res) => {
+	const user_id = req.user._id;
+	const items = await Item.find({ user_id }).sort({ createdAt: -1 });
+	res.status(200).json(items);
+};
+
 // CREATE a new item
 const createItemPost = async (req, res) => {
 	const user_id = req.user._id;
@@ -52,6 +59,13 @@ const getRequests = async (req, res) => {
 	res.status(200).json(requests);
 };
 
+// GET all user requests
+const getUserRequests = async (req, res) => {
+	const user_id = req.user._id;
+	const requests = await Request.find({ user_id }).sort({ createdAt: -1 });
+	res.status(200).json(requests);
+};
+
 // CREATE a new request
 const createItemRequest = async (req, res) => {
 	const user_id = req.user._id;
@@ -91,8 +105,10 @@ const deleteRequest = async (req, res) => {
 module.exports = {
 	createItemPost,
 	getItems,
+	getUserItems,
 	deleteItem,
 	createItemRequest,
 	getRequests,
+	getUserRequests,
 	deleteRequest,
 };

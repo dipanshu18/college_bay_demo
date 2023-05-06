@@ -15,7 +15,7 @@ function UserRequests() {
 			if (!user) {
 				return;
 			}
-			const response = await fetch("/api/items/requests/all", {
+			const response = await fetch("/api/items/requests/user-requests", {
 				headers: {
 					Authorization: `Bearer ${user.token}`,
 				},
