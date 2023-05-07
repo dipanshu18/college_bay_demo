@@ -44,7 +44,7 @@ function ItemRequestForm() {
 					{/* <div className="container flex justify-around flex-col items-center lg:flex-row">
 						<label
 							className="block text-center my-2 lg:my-auto text-sm text-purple-900"
-							htmlFor="user_avatar">
+							htmlFor="requestImage">
 							Upload product image
 						</label>
 						<form
@@ -54,9 +54,10 @@ function ItemRequestForm() {
 							<input
 								type="file"
 								className="block max-w-sm text-sm text-purple-900 border border-purple-300 rounded-lg cursor-pointer bg-purple-50"
-								aria-describedby="user_avatar_help"
-								id="user_avatar"
-								name="img"
+								id="requestImage"
+								name="requestImage"
+								onChange={(e) => setRequestImage(e.target.value)}
+								value={requestImage}
 							/>
 							<div className="inline max-w-fit mx-2 md:mx-4 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
 								<input type="submit" name="submit" value="Upload" />
