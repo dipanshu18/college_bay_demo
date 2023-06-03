@@ -1,5 +1,4 @@
 # CollegeBay
-![Blue White Simple Aesthetic Book Cafe Logo](https://user-images.githubusercontent.com/88198352/236630278-d5c25ffc-4b9a-44c1-bec9-20a426d76ffa.png)
 
 CollegeBay is an online marketplace for college students to buy and sell college-related materials. The platform is designed to make it easy for students to find what they need, sell what they don't, and connect with other students in the same college or university.
 
@@ -7,25 +6,25 @@ CollegeBay is an online marketplace for college students to buy and sell college
 
 To get started with CollegeBay, you will need to have Node.js and MongoDB installed on your local machine. You can then clone the repository and install the dependencies using the following commands:
 
-```git clone https://github.com/collegebay/collegebay.git```
+`git clone https://github.com/collegebay/collegebay.git`
 
-```cd collegebay```
+`cd collegebay`
 
-```npm install```
+`npm install`
 
 To start backend server:
 
-```cd backend```
+`cd backend`
 
-```npm run dev```
+`npm run dev`
 
 You will also need to create a `.env` file in the root directory and add your MongoDB connection string and other environment variables.
 
 To start frontend with React:
 
-```cd frontend```
+`cd frontend`
 
-```npm start```
+`npm start`
 
 ## Features
 
